@@ -19,7 +19,7 @@ Y = iris.target
 #train test split
 x_train,x_test,y_train,y_test = train_test_split(X,Y,test_size=0.2,random_state=42)
 
-#define parameters
+#define parameter
 max_depth = 10
 
 mlflow.set_experiment('iris-dt') # will use iris-dt if already create or will create new experiment and then use
