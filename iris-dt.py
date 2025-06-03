@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score,confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
 
 import dagshub
 dagshub.init(repo_owner='vashisthrahul13', repo_name='mlflow-dagshub-learn', mlflow=True)
@@ -69,10 +70,10 @@ with mlflow.start_run():
     mlflow.set_tag('model','decision tree')
 
     #logging dataset
-    train_df = x_train
+    train_df = pd.DataFrame(x_train,columns = iris.feature_names)
     train_df['variety'] = y_train
 
-    test_df = x_test
+    test_df = pd.DataFrame(x_test,columns = iris.feature_names)
     test_df['variety'] = y_test
 
     train_df = mlflow.data.from_pandas(train_df)
