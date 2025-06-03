@@ -8,6 +8,10 @@ from sklearn.metrics import accuracy_score,confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+import dagshub
+dagshub.init(repo_owner='vashisthrahul13', repo_name='mlflow-dagshub-learn', mlflow=True)
+
+mlflow.set_tracking_uri("https://dagshub.com/vashisthrahul13/mlflow-dagshub-learn.mlflow")
 
 print(mlflow.get_tracking_uri) #Defines where MLflow logs and retrieves runs
 
